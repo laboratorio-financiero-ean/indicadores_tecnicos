@@ -18,11 +18,12 @@ import mplfinance as mpf
 
 desde   = dt.datetime(2022, 1, 1)   # Enero 1/2022
 hasta   = dt.datetime(2022, 9, 30)  # Septiembre 30/2022
-dataset = web.DataReader('AAPL', 'yahoo', desde , hasta )
+accion  = 'AAPL'
+dataset = web.DataReader(accion, 'yahoo', desde , hasta )
 
 
 print(dataset)
 
-#mpf.plot(dataset, type='candle', style='charles',
-         #title='Analisis de la accion Apple durante 2022', ylabel='Price ($)')
+mpf.plot(dataset, type='candle', style='charles',
+title='Acción de APPLE - Comportamiento durante 2022', ylabel='Price ($)')
 
