@@ -1,0 +1,6 @@
+git add .
+
+git commit -m "comentario del commit"
+git commit -m "Publicacion Serie 1.4 Calculo de medias moviles"
+
+git push
