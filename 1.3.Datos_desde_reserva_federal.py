@@ -16,8 +16,9 @@
 import pandas as pd
 import pandas_datareader.data as web
 import datetime as dt
-
-desde   = dt.datetime(2020, 1, 1)   # Enero 1/2022
+import matplotlib.pyplot as plt
+ 
+desde   = dt.datetime(2020, 1, 1)   # Enero 1/2020
 hasta   = dt.datetime(2022, 9, 30)  # Septiembre 30/2022
 
 pd.set_option('display.max_rows', 36)
@@ -25,3 +26,6 @@ indicador  = 'GDP'
 dataset = web.DataReader(indicador, 'fred', desde , hasta )
 print(dataset)
 
+plt.title("Análisis del Producto Interno Bruto de USA. 2022-2022")  
+plt.plot(dataset['GDP'])  
+plt.show()  

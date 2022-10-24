@@ -18,7 +18,7 @@ import pandas_datareader.data as web
 import datetime as dt
 import mplfinance as mpf
 
-desde   = dt.datetime(2022, 1, 1)   # Enero 1/2022
+desde   = dt.datetime(2020, 1, 1)   # Enero 1/2022
 hasta   = dt.datetime(2022, 9, 30)  # Septiembre 30/2022
 accion  = 'AAPL'
 dataset = web.DataReader(accion, 'yahoo', desde , hasta )

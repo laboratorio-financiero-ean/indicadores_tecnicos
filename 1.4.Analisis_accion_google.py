@@ -34,17 +34,17 @@ dataset_signal['positions'] = dataset_signal['signal'].diff()
 fig = plt.figure()
 ax1 = fig.add_subplot(111, ylabel='Precio en USD$')
 #dibujamos la linea segun el precio
-dataset_signal['price'].plot(ax=ax1, color='r', lw=2.)
+dataset_signal['price'].plot(ax=ax1, color='grey', lw=2.)
 
 #dibujamos señal de soporte 
-ax1.plot(dataset_signal.loc[dataset_signal.positions == 1.0].index,
-         dataset_signal.price[dataset_signal.positions == 1.0],
-         '^', markersize=5, color='m')
-
-#dibujamos señal de resistencia 
 ax1.plot(dataset_signal.loc[dataset_signal.positions == -1.0].index,
          dataset_signal.price[dataset_signal.positions == -1.0],
-         'v', markersize=5, color='k')
+         '^', markersize=5, color='g')
 
-plt.title('Comportamiento acción de Google durante 2022' )
+#dibujamos señal de resistencia 
+ax1.plot(dataset_signal.loc[dataset_signal.positions == 1.0].index,
+         dataset_signal.price[dataset_signal.positions == 1.0],
+         'v', markersize=5, color='r')
+
+plt.title('Comportamiento de soportes y resistencias de Google durante 2022' )
 plt.show()

@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 
 #simbolos=['SAN.MC', 'BBVA.MC']
 simbolos='GOOGL'
-desde   = '2018-01-01'   # Enero 1/2022
+desde   = '2020-01-01'   # Enero 1/2022
 hasta   = '2022-09-30'   # Septiembre  30/2022
 
 datos=pdr.get_data_yahoo(simbolos, start = desde, end = hasta)
@@ -40,13 +40,13 @@ def MediaMovil(df,periodos):
     df = df.join(MediaMovil)
     return df
 
-#ma_9   = MediaMovil(datos,9)      # Acción del precio
-ma_50  = MediaMovil(datos, 50)      # Reversiones
+ma_9   = MediaMovil(datos,9)      # Acción del precio
+ma_50  = MediaMovil(ma_9, 50)      # Reversiones
 ma_200 = MediaMovil(ma_50, 200)     # Tendencia principal
 
 ma_200.head()
 
-df = ma_200[['Close','MA_50','MA_200']]
+df = ma_200[['Close','MA_9','MA_50','MA_200']]
 
 titulo = 'Acción de '+ simbolos +':: Gráfico de Medias moviles desde:'+ desde + ' hasta:'+ hasta 
 df.plot(title = titulo , figsize = (16,8))    

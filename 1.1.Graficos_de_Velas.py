@@ -20,14 +20,14 @@ import mplfinance  as mpf
 import matplotlib.pyplot as plt
 
 
-desde  = dt.datetime(2022, 9, 20)  # Septiembre 20/2022
-desde  = dt.datetime(2022, 9, 30)  # Septiembre 30/2022
+desde  = dt.datetime(2022, 1, 1)   # Enero 1/2022
 hasta  = dt.datetime(2022, 9, 30)  # Septiembre 30/2022
+
 accion = 'AAPL'
 datos  = web.DataReader(accion, 'yahoo', desde , hasta )
 print(datos)
 
 mpf.plot(datos, type='candle', style='charles',
-   title='Gráfico de Velas - Acción de APPLE durante Septiembre de 2022', ylabel='Precio en (USD$)')
+   title='Gráfico de Velas - Acción de APPLE de Enero 1 a Septiembre 30 de 2022', ylabel='Precio en (USD$)')
 
 
