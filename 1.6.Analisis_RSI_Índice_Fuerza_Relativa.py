@@ -10,7 +10,7 @@
 # En ningún caso podrá tomarse este contenido académico como consejos de inversión o asesoría financiera.
 #
 # Resultado: Analisis de Indice de fuerza relativa (RSI) de la Acción de: Google 
- 
+
 
 import datetime as date
 import numpy  as np
