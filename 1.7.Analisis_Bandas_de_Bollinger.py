@@ -21,6 +21,7 @@ simbolo='GOOGL'
 desde   = '2022-01-01'   # Enero 1/2022
 hasta   = '2022-10-15'   # Octubre 15/2022
 
+
 datos = pdr.get_data_yahoo(simbolo, start = desde, end = hasta)
 # Lo que recibimos en data es un Panel de Pandas, una matriz de dos dimensiones
 datos.head()
